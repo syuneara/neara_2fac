@@ -1,0 +1,93 @@
+.ios {
+  body {
+    --ion-background-color: var(--g-6);
+    --ion-background-color-rgb: 255, 255, 255;
+
+    --ion-text-color: var(--l-1);
+    --ion-text-color-rgb: 0, 0, 0;
+
+    --ion-border-color: var(--sep);
+
+    --ion-toolbar-background: var(--g-5);
+  }
+
+  .ion-page.dark-bg {
+    --ion-background-color: var(--g-5);
+    --ion-background-color-rgb: 242, 242, 247;
+
+    --ion-toolbar-background: var(--g-6);
+
+    --ion-item-background: var(--g-6);
+  }
+
+  ion-modal {
+    ion-toolbar {
+      @apply px-1; /* to align the toolbar buttons with the contents */
+    }
+  }
+
+  ion-tab-button {
+    --color-selected: var(--ion-color-brand);
+  }
+
+  ion-searchbar {
+    --color: var(--l-1);
+    --placeholder-color: var(--l-2);
+    --placeholder-opacity: 1;
+    --icon-color: var(--l-2);
+    --background: var(--fill);
+  }
+
+  ion-list {
+    border-color: var(--sep);
+  }
+
+  ion-alert {
+    --background: var(--g-5);
+  }
+
+  ion-item {
+    --padding-start: 1em;
+    @apply text-base; /* Replaces the weird default of 17px */
+  }
+
+  ion-list > ion-item-sliding:last-of-type ion-item,
+  ion-list > ion-item:last-of-type {
+    --inner-border-width: 0;
+  }
+
+  .icon-thumbnail {
+    @apply flex items-center justify-center;
+    @apply h-7 w-7;
+    @apply rounded-md;
+    @apply mr-4;
+
+    ion-icon {
+      @apply h-5 w-5;
+      @apply text-white;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) { /* Overrides rules from the base theme */
+  .ios {
+    body {
+      --ion-background-color-rgb: 0, 0, 0;
+
+      --ion-text-color-rgb: 255, 255, 255;
+    }
+
+    .ion-page.dark-bg {
+      --ion-background-color: var(--g-6);
+      --ion-background-color-rgb: 0, 0, 0;
+
+      --ion-toolbar-background: var(--g-5);
+
+      --ion-item-background: var(--g-5);
+    }
+
+    ion-modal {
+      --ion-toolbar-background: var(--g-5);
+    }
+  }
+}
